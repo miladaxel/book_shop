@@ -25,3 +25,15 @@ class CategoryList(ListView):
     context_object_name = 'categories'
 
 
+class CategoryBooksView(DetailView):
+    model = Category
+    template_name = 'home/category_book.html'
+    context_object_name = 'category'
+    slug_field = 'slug'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['book_categories'] = self.object.book_categories.all()
+        return context
+

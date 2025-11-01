@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category.name }}</title>
+</head>
+<body>
+<h1> books of {{ category.name }}</h1>
+<ul>
+    {% for book in book_categories %}
+        <li>{{ book.title }}</li>
+    {% empty %}
+        <li> there is no book </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
