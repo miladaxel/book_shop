@@ -8,7 +8,9 @@
 <h1>{{ book.title }}</h1>
 <h3>
     {{ book.author }}
-    {{ book.categories }}
+    {% for cat in book.categories.all %}
+        {{ cat.name }}
+    {% endfor %}
     {{ book.edition }}
     {{ book.publish_year }}
 </h3>

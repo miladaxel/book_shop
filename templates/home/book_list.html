@@ -18,7 +18,9 @@
 <h3>authors </h3>
 {% for author in authors %}
     <ul>
-    {{ author.name }}
+        <a href="{% url 'author_detail' slug=author.slug %}">
+            {{ author.name }}
+        </a>
     </ul>
 {% endfor %}
 </body>

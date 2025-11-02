@@ -5,9 +5,12 @@
     <title>categories</title>
 </head>
 <body>
+<h1> categories </h1>
     {% for category in categories %}
-    <ul>
-    {{ category.name }}
+        <ul>
+    <a href="{% url 'category_books' slug=category.slug %}">
+        {{ category.name }}
+    </a>
     </ul>
 {% endfor %}
 </body>

@@ -24,7 +24,7 @@ class CategoryList(ListView):
     template_name = 'home/category_list.html'
     context_object_name = 'categories'
 
-
+#برای لیست یک کتگوری خاص
 class CategoryBooksView(DetailView):
     model = Category
     template_name = 'home/category_book.html'
@@ -37,3 +37,11 @@ class CategoryBooksView(DetailView):
         context['book_categories'] = self.object.book_categories.all()
         return context
 
+
+
+class AuthorDetailView(DetailView):
+    model = Author
+    template_name = 'home/author_detail.html'
+    context_object_name = 'author'
+    slug_field = 'slug'
+    slug_url_kwarg = 'slug'

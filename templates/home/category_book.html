@@ -8,7 +8,9 @@
 <h1> books of {{ category.name }}</h1>
 <ul>
     {% for book in book_categories %}
-        <li>{{ book.title }}</li>
+        <a href="{% url 'book_datail_page' slug=book.slug %}">
+            {{ book.title }}
+        </a>
     {% empty %}
         <li> there is no book </li>
     {% endfor %}
